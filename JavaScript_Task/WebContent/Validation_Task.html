@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<head>
+<title>Epam Task</title>
+<style>
+
+h1{
+font-family:arial;
+}
+</style>
+</head>
+<body bgcolor=teal>
+<center><h1>Epam Registration</h1></center>
+<strong>
+<form action="" >
+First Name: </strong><input id="first" type="text" placeholder="Enter First Name" name="firstname" onchange="myFunction()" required><br><br>
+<strong>Last Name: </strong><input id="last" type="text" name="lastname" placeholder="Enter Last Name" onchange="myFunction2()"><br><br>
+<strong>Password : </strong><input id="pass" type="password" placeholder="Enter a password"  minlength="8" required><br><br>
+<strong>Age: </strong><input id="age" type="text" placeholder="Enter Age (18+)" name="Age" onchange="myFunction3()" required><br><br>
+<strong>Phone Number: </strong><input id="number" type="number" placeholder="Enter Phone Number" name="Number" onchange="myFunction4()" required><br><br>
+<strong>Email id: </strong><input id="mail" type="email" placeholder="Enter Email Address" name="mail"  required><br><br>
+
+  <input type="checkbox" id="check"> I accept to all terms and conditions<br><br>
+<center><input type="submit" id="sub" onclick="fun1()"></center>
+</form>
+<br><br>
+<script>
+function myFunction()
+{
+var str=document.getElementById("first");
+str.value=str.value.toUpperCase();
+
+}
+function myFunction2()
+{
+var str=document.getElementById("last");
+str.value=str.value.toUpperCase();
+}
+function myFunction3()
+{
+var str=document.getElementById("age").value;
+if(str<18)
+{
+alert("error in Age:");
+}
+}
+function myFunction4()
+{
+var str=document.getElementById("number").value;
+if(str.length<1)
+{
+alert("plaese enter your phone number");
+}
+if(str.length<10)
+{
+alert("error in Phone Number:");
+}
+}
+function fun1()
+{
+var c=document.getElementById("number").value;
+if(c=="")
+{
+alert("please enter your phone number");
+}
+var d=document.getElementById("mail").value;
+if(d=="")
+{
+    alert("please enter your mail id");
+}
+if(!d.contains("@")){
+    alert("Please enter valid Mail Id");
+}
+var x = document.getElementById("check").checked;
+if(x==false)
+{
+alert("please accept terms and condition")
+}
+document.getElementById("sub").addEventListener("click", displayMessage);
+function displayMessage(){
+    alert("Do you want to submit");
+}
+}
+</script>
+</body>
+</html>
